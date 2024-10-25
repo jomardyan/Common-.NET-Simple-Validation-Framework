@@ -288,8 +288,4 @@ Please ensure your code follows the existing style and includes appropriate test
 
 ## License
 
-<<<<<<< HEAD
 This project is licensed under the MIT License - see the LICENSE file for details.
-=======
-This project is licensed under the MIT License - see the LICENSE file for details.
->>>>>>> 35d788c3e239a2673153d39c8e83e9ceb4b5f1af

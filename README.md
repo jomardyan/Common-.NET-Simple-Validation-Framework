@@ -148,9 +148,9 @@ var required = CommonValidators.RequiredValidator(fieldName: "DisplayName");
 ```csharp
 var length = CommonValidators.LengthValidator(minLength: 3, maxLength: 20, fieldName: "DisplayName");
 // Validates:
-// - Minimum length (optional, ignores empty values)
-// - Maximum length (optional, ignores empty values)
-// - Combine with RequiredValidator when the field must be filled in
+// - Minimum length (empty values are invalid when minLength > 0)
+// - Maximum length (optional)
+// - Use RequiredValidator for required fields when minLength is 0
 ```
 
 ### RegexValidator

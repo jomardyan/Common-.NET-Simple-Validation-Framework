@@ -167,8 +167,7 @@ namespace ValidationFramework
 
             if (minLength > 0)
             {
-                validator.AddRule(value => !string.IsNullOrWhiteSpace(value), $"{fieldName} is required");
-                validator.AddRule(value => string.IsNullOrWhiteSpace(value) || value.Length >= minLength,
+                validator.AddRule(value => !string.IsNullOrWhiteSpace(value) && value.Length >= minLength,
                     $"{fieldName} must be at least {minLength} characters long");
             }
 
@@ -186,9 +185,10 @@ namespace ValidationFramework
             string errorMessage,
             string fieldName = "Value")
         {
-            var regex = new Regex(pattern, RegexOptions.Compiled | RegexOptions.CultureInvariant);
             return new Validator<string>(fieldName)
-                .AddRule(value => string.IsNullOrWhiteSpace(value) || regex.IsMatch(value), errorMessage);
+                .AddRule(value => string.IsNullOrWhiteSpace(value)
+                    || Regex.IsMatch(value, pattern, RegexOptions.CultureInvariant),
+                    errorMessage);
         }
 
         public static Validator<T> RangeValidator<T>(
@@ -337,12 +337,12 @@ namespace ValidationFramework
                 var propertyResult = validation.Value(entity);
                 if (propertyResult.Errors.Count > 0 && propertyResult.FieldErrors.Count == 0)
                 {
-                    var errors = propertyResult.Errors.ToArray();
-                    propertyResult.Errors.Clear();
-                    foreach (var error in errors)
+                    var scopedResult = new ValidationResult { IsValid = propertyResult.IsValid };
+                    foreach (var error in propertyResult.Errors)
                     {
-                        propertyResult.AddFieldError(validation.Key, error);
+                        scopedResult.AddFieldError(validation.Key, error);
                     }
+                    propertyResult = scopedResult;
                 }
                 result = result.Merge(propertyResult);
             }

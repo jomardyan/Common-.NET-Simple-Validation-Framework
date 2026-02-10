@@ -24,6 +24,7 @@ A lightweight, flexible, and extensible validation framework for .NET applicatio
 - 🏗️ Built-in validators for common scenarios
 - 🔄 Chainable validation rules
 - 📊 Field-specific error tracking
+- 🧩 UI-agnostic for WinForms, WPF, and ASP.NET apps
 - 🎨 Clean and maintainable code structure
 
 ## Installation
@@ -76,6 +77,33 @@ var phoneValidator = CommonValidators.PhoneValidator(requiredLength: 10);
 var phoneResult = phoneValidator.Validate("1234567890");
 ```
 
+### WinForms (ErrorProvider)
+
+```csharp
+var result = validator.ValidateProfile(profile);
+errorProvider.SetError(emailTextBox, result.GetFirstFieldError("Email") ?? string.Empty);
+```
+
+### WPF (INotifyDataErrorInfo)
+
+```csharp
+var result = validator.ValidateProfile(profile);
+var emailErrors = result.GetFieldErrors(nameof(UserProfile.Email));
+```
+
+### ASP.NET Core (ModelState)
+
+```csharp
+var result = validator.ValidateProfile(profile);
+foreach (var entry in result.ToErrorDictionary())
+{
+    foreach (var error in entry.Value)
+    {
+        ModelState.AddModelError(entry.Key, error);
+    }
+}
+```
+
 ### Complex Object Validation
 
 ```csharp
@@ -108,6 +136,36 @@ var result = validator.ValidateProfile(profile);
 ```
 
 ## Built-in Validators
+
+### RequiredValidator
+```csharp
+var required = CommonValidators.RequiredValidator(fieldName: "DisplayName");
+// Validates:
+// - Required field
+```
+
+### LengthValidator
+```csharp
+var length = CommonValidators.LengthValidator(minLength: 3, maxLength: 20, fieldName: "DisplayName");
+// Validates:
+// - Minimum length (empty values are invalid when minLength > 0)
+// - Maximum length (optional)
+// - Use RequiredValidator for required fields when minLength is 0
+```
+
+### RegexValidator
+```csharp
+var regex = CommonValidators.RegexValidator(@"^\d{3}$", "Must be 3 digits", "Code");
+// Validates:
+// - Regex pattern match (skips empty values)
+```
+
+### RangeValidator
+```csharp
+var range = CommonValidators.RangeValidator(minValue: 1, maxValue: 10, fieldName: "Rating");
+// Validates:
+// - Value range
+```
 
 ### EmailValidator
 ```csharp
@@ -207,6 +265,13 @@ public class ValidationResult
     public List<string> Errors { get; }
     public Dictionary<string, List<string>> FieldErrors { get; }
 }
+```
+
+Helper methods are available for UI integration:
+
+```csharp
+var errors = result.GetFieldErrors("Email");
+var firstError = result.GetFirstFieldError("Email");
 ```
 
 ### Handling Validation Results

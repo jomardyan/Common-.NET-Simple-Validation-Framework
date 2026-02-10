@@ -167,7 +167,6 @@ namespace ValidationFramework
 
             if (minLength > 0)
             {
-                validator.AddRule(value => !string.IsNullOrWhiteSpace(value), $"{fieldName} is required");
                 validator.AddRule(value => string.IsNullOrWhiteSpace(value) || value.Length >= minLength,
                     $"{fieldName} must be at least {minLength} characters long");
             }
@@ -186,7 +185,7 @@ namespace ValidationFramework
             string errorMessage,
             string fieldName = "Value")
         {
-            var regex = new Regex(pattern);
+            var regex = new Regex(pattern, RegexOptions.Compiled | RegexOptions.CultureInvariant);
             return new Validator<string>(fieldName)
                 .AddRule(value => string.IsNullOrWhiteSpace(value) || regex.IsMatch(value), errorMessage);
         }

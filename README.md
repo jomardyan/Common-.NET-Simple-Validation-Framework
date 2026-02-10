@@ -241,6 +241,73 @@ var currencyValidator = CommonValidators.CurrencyValidator(
 // - Value range
 ```
 
+### ZipCodeValidator
+```csharp
+var zipValidator = CommonValidators.ZipCodeValidator();
+// Validates:
+// - US ZIP code format (12345 or 12345-6789)
+// - Required field
+```
+
+### AlphanumericValidator
+```csharp
+var alphanumericValidator = CommonValidators.AlphanumericValidator(
+    minLength: 3,
+    maxLength: 20
+);
+// Validates:
+// - Letters and numbers only
+// - Length constraints
+// - Required field
+```
+
+### IpAddressValidator
+```csharp
+var ipValidator = CommonValidators.IpAddressValidator();
+// Validates:
+// - IPv4 address format
+// - Required field
+```
+
+### UsernameValidator
+```csharp
+var usernameValidator = CommonValidators.UsernameValidator(
+    minLength: 3,
+    maxLength: 20
+);
+// Validates:
+// - Must start with a letter
+// - Letters, numbers, underscores, hyphens allowed
+// - Length constraints
+// - Required field
+```
+
+### CreditCardValidator
+```csharp
+var cardValidator = CommonValidators.CreditCardValidator();
+// Validates:
+// - Credit card number format (13-19 digits)
+// - Luhn algorithm checksum
+// - Accepts spaces and hyphens
+// - Required field
+```
+
+### PostalCodeValidator
+```csharp
+var postalValidator = CommonValidators.PostalCodeValidator();
+// Validates:
+// - Canadian postal code format (A1A 1A1)
+// - Required field
+```
+
+### HexColorValidator
+```csharp
+var colorValidator = CommonValidators.HexColorValidator();
+// Validates:
+// - Hexadecimal color code format (#RRGGBB or #RGB)
+// - Required field
+```
+
 ## Creating Custom Validators
 
 You can create custom validators by extending the base `Validator<T>` class:

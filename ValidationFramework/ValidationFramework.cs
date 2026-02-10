@@ -545,7 +545,7 @@ namespace ValidationFramework
             return new Validator<string>(fieldName)
                 .AddRule(ip => !string.IsNullOrWhiteSpace(ip), "IP address is required")
                 .AddRule(ip => string.IsNullOrWhiteSpace(ip)
-                    || System.Net.IPAddress.TryParse(ip, out _),
+                    || (System.Net.IPAddress.TryParse(ip, out var addr) && addr.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork && ip.Split('.').Length == 4),
                     "Invalid IP address format");
         }
 

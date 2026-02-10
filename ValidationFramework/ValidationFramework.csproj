@@ -1,9 +1,39 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
+    <TargetFramework>net9.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <LangVersion>latest</LangVersion>
+
+    <!-- NuGet Package Metadata -->
+    <PackageId>ValidationFramework</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>jomardyan</Authors>
+    <Company>jomardyan</Company>
+    <Product>Validation Framework</Product>
+    <Description>A lightweight, flexible, and extensible validation framework for .NET applications. Provides a clean and intuitive way to validate various data types with customizable rules and detailed error reporting. UI-agnostic and works seamlessly with WinForms, WPF, and ASP.NET applications.</Description>
+    <PackageTags>validation;validator;fluent;data-validation;netstandard;winforms;wpf;aspnetcore</PackageTags>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/jomardyan/Common-.NET-Simple-Validation-Framework</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/jomardyan/Common-.NET-Simple-Validation-Framework</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageReleaseNotes>Initial release with comprehensive validation framework including built-in validators for common scenarios.</PackageReleaseNotes>
+
+    <!-- Generate XML documentation file for IntelliSense -->
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
+    <NoWarn>$(NoWarn);1591</NoWarn>
+
+    <!-- Additional package configuration -->
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="../README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
 
 </Project>

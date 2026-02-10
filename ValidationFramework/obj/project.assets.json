@@ -8,19 +8,19 @@
     "net8.0": []
   },
   "packageFolders": {
-    "/home/codespace/.nuget/packages/": {}
+    "/home/runner/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/workspaces/Common-.NET-Simple-Validation-Framework/ValidationFramework/ValidationFramework.csproj",
+      "projectUniqueName": "/home/runner/work/Common-.NET-Simple-Validation-Framework/Common-.NET-Simple-Validation-Framework/ValidationFramework/ValidationFramework.csproj",
       "projectName": "ValidationFramework",
-      "projectPath": "/workspaces/Common-.NET-Simple-Validation-Framework/ValidationFramework/ValidationFramework.csproj",
-      "packagesPath": "/home/codespace/.nuget/packages/",
-      "outputPath": "/workspaces/Common-.NET-Simple-Validation-Framework/ValidationFramework/obj/",
+      "projectPath": "/home/runner/work/Common-.NET-Simple-Validation-Framework/Common-.NET-Simple-Validation-Framework/ValidationFramework/ValidationFramework.csproj",
+      "packagesPath": "/home/runner/.nuget/packages/",
+      "outputPath": "/home/runner/work/Common-.NET-Simple-Validation-Framework/Common-.NET-Simple-Validation-Framework/ValidationFramework/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/codespace/.nuget/NuGet/NuGet.Config"
+        "/home/runner/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -43,7 +43,8 @@
         "enableAudit": "true",
         "auditLevel": "low",
         "auditMode": "direct"
-      }
+      },
+      "SdkAnalysisLevel": "10.0.100"
     },
     "frameworks": {
       "net8.0": {
@@ -64,7 +65,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.402/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/10.0.102/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

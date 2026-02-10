@@ -1,0 +1,12 @@
+/home/runner/work/Common-.NET-Simple-Validation-Framework/Common-.NET-Simple-Validation-Framework/ValidationFramework/bin/Debug/net8.0/ValidationFramework.deps.json
+/home/runner/work/Common-.NET-Simple-Validation-Framework/Common-.NET-Simple-Validation-Framework/ValidationFramework/bin/Debug/net8.0/ValidationFramework.dll
+/home/runner/work/Common-.NET-Simple-Validation-Framework/Common-.NET-Simple-Validation-Framework/ValidationFramework/bin/Debug/net8.0/ValidationFramework.pdb
+/home/runner/work/Common-.NET-Simple-Validation-Framework/Common-.NET-Simple-Validation-Framework/ValidationFramework/obj/Debug/net8.0/ValidationFramework.GeneratedMSBuildEditorConfig.editorconfig
+/home/runner/work/Common-.NET-Simple-Validation-Framework/Common-.NET-Simple-Validation-Framework/ValidationFramework/obj/Debug/net8.0/ValidationFramework.AssemblyInfoInputs.cache
+/home/runner/work/Common-.NET-Simple-Validation-Framework/Common-.NET-Simple-Validation-Framework/ValidationFramework/obj/Debug/net8.0/ValidationFramework.AssemblyInfo.cs
+/home/runner/work/Common-.NET-Simple-Validation-Framework/Common-.NET-Simple-Validation-Framework/ValidationFramework/obj/Debug/net8.0/ValidationFramework.csproj.CoreCompileInputs.cache
+/home/runner/work/Common-.NET-Simple-Validation-Framework/Common-.NET-Simple-Validation-Framework/ValidationFramework/obj/Debug/net8.0/ValidationFramework.sourcelink.json
+/home/runner/work/Common-.NET-Simple-Validation-Framework/Common-.NET-Simple-Validation-Framework/ValidationFramework/obj/Debug/net8.0/ValidationFramework.dll
+/home/runner/work/Common-.NET-Simple-Validation-Framework/Common-.NET-Simple-Validation-Framework/ValidationFramework/obj/Debug/net8.0/refint/ValidationFramework.dll
+/home/runner/work/Common-.NET-Simple-Validation-Framework/Common-.NET-Simple-Validation-Framework/ValidationFramework/obj/Debug/net8.0/ValidationFramework.pdb
+/home/runner/work/Common-.NET-Simple-Validation-Framework/Common-.NET-Simple-Validation-Framework/ValidationFramework/obj/Debug/net8.0/ref/ValidationFramework.dll
